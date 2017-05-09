@@ -9,6 +9,7 @@ import org.testng.Assert;
  * Created by User on 06.05.2017.
  */
 public class HomePage {
+    By photoLocator=By.id("ctl00_centreContentPlaceHolder_lnkEditProfilePhoto");
     private final WebDriver driver;
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -16,7 +17,7 @@ public class HomePage {
 
             (new WebDriverWait(driver, 10)).until(new ExpectedCondition<WebElement>() {
                 public WebElement apply(WebDriver d) {
-                    return d.findElement(By.id("ctl00_centreContentPlaceHolder_lnkEditProfilePhoto"));
+                    return d.findElement(photoLocator);
                 }
             });
         Assert.assertTrue(driver.getTitle().contains("My Account - WhiteLabel Site06"), "Title not matching!");

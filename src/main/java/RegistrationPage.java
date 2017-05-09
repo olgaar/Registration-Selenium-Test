@@ -82,9 +82,9 @@ public class RegistrationPage {
     }
 
 
-    public RegConfirmPage submitRegistration() {
+    public MailHelper submitRegistration() {
         driver.findElement(signupLocator).click();
-        return new RegConfirmPage(driver);
+        return new MailHelper(driver);
     }
 
     public RegistrationPage submitRegistrationExpectingFailure() {
@@ -92,7 +92,7 @@ public class RegistrationPage {
         return new RegistrationPage(driver);
     }
 
-    public RegConfirmPage registrAs(String firstname, String surname, String company, String city, String state, String country, String password) {
+    public MailHelper registrAs(String firstname, String surname, String company, String city, String state, String country, String password) {
         typeFName(firstname);
         typeSName(surname);
         typeCompany(company);
